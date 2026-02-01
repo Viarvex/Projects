@@ -1,0 +1,265 @@
+//DAY 12
+#include <bits/stdc++.h> // ALL STANDARD C++ LIBRARIES IN A HEADER FILE
+using txt = std::string; using vi = std::vector<int>; using vs = std::vector<std::string>; // ALIASING
+
+//----FUNCTIONS----//
+// void | multiple parameters | default parameters
+void stats(float health, float stamina, float mana, float base_damage, float bonus_damage, bool isalive = true) {
+    if (health <= 0) {
+        isalive = false;
+        std::cout << "you-died" << std::endl;
+    }
+    float damage = base_damage + bonus_damage;
+}
+
+// return functions
+long add(long num1, long num2) {
+    return num1 + num2;
+}
+
+//----REFERENCES----//
+//pass by reference (parameter)
+void damage(float& health) {
+    health -= 1;
+    std::cout << "new-health: " << health << std::endl;
+}
+
+//const reference (parameter + const)
+void printscore(const int& score) {
+    std::cout << "new-score: " << score << std::endl;
+}
+
+//functions & references
+int hlth; bool isalv;
+void applydamage(int& hlth, bool& isalv) {
+    hlth -=10;
+    if (hlth <= 0) {
+        isalv = false;
+    }
+}
+
+//----OBJECT-ORIENTED-PROGRAMMING----//
+
+//Constructors & Destructors
+class Enemy { // name
+    public: // access specifier
+
+    Enemy() { // constructor (to create a constructor call the functions name)
+        std::cout << "Enemy Constructed" << std::endl;
+    }
+
+    ~Enemy() { // destructor (call the name but with a ~ before if you don't it will be a constructor)
+        std::cout << "Enemy Destroyed" << std::endl;
+    }
+};
+
+//Classes
+class Player { // class name
+    public: // access specifier (public = access anywhere)
+    int health; // attribute 1
+    void attack() { // method 1
+        std::cout << "Player Attacked" << std::endl;
+    }
+};
+
+//Encapsulation  (Bundling data + logic together and protecting internal state)
+class logi {
+private: // (access only inside class)
+    int health; // hidden attribute
+
+public: // (access anywhere)
+    void setHealth(int h) { // method (name is set health) (health variable is h)
+        if (h >= 0) health = h; // aliasing health to h
+    }
+
+    int getHealth() { // call
+        return health; // logic
+    }
+};
+
+//Inheritance (One class derives from another)
+class Entity {
+public:
+    int hp;
+};
+
+class playr : public Entity {
+public:
+    void jump() {
+        std::cout << "Player Jumped" << std::endl;
+    }
+};
+
+//Polymorphism
+class Enemyy {
+public:
+    virtual void attack() {
+        std::cout << "Enemy attack\n";
+    }
+};
+
+class Boss : public Enemyy {
+public:
+    virtual stdvoid attack() override {
+        std::cout << "Boss special attack\n";
+    }
+};
+
+
+
+
+int main() {
+    //SPEED SYNCING
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+
+    //---------------------OOP-------------------------------------//
+    //Constructors / destructors
+
+    //Classes
+    Player p1; // object
+    p1.health = 100;
+
+    //polymorphism (without virtual functions)
+    Enemyy* e = new Boss();
+        e->attack(); // boss special attack
+
+
+
+
+
+
+
+    //---------------------OOP-------------------------------------//
+
+    //----LOOPS----//
+    //for
+    for (int q = 0; q < 3; q++) {
+        std::cout << "FOR: " << q << std::endl;
+    }
+
+    //while
+    int w = 0;
+    while (w < 5) {
+        w++;
+        std::cout << "WHILE: " << w << std::endl;
+    }
+
+    //do-while
+    int e = 0;
+    do {
+        e++;
+        std::cout << "DO-WHILE: " << e << std::endl;
+    } while (e < 5);
+
+    //break
+    for (int r = 0; r < 3; r++) {
+        if (r == 2) {
+            break;
+        }
+        std::cout << "BREAK: " << r << std::endl;
+    }
+
+    //continue
+    for (int t = 0; t < 3; t++) {
+        if (t == 2) {
+            continue;
+        }
+        std::cout << "CONTINUE: " << t << std::endl;
+    }
+
+    //nested
+    for (int y = 0; y < 3; y++) {
+        std::cout << "OUTER-LOOP: " << y << std::endl;
+
+        for (int u = 0; u < 3; u++) {
+            std::cout << "INNER-LOOP: " << u << std::endl;
+        }
+    }
+
+    //reverse
+    for (int i = 5; i > 0; i--) {
+        std::cout << "REVERSE: " << i << std::endl;
+    }
+
+    //range-based
+    vi vec1 = {10, 20, 30};
+    for (int o : vec1) {
+        std::cout << "RANGE-BASED: " << o << std::endl;
+    }
+
+    //----ARRAYS----//
+    // fixed-size
+    double arr[3] = {30, 20, 10};
+    for (double p : arr) {
+        std::cout << "FIXED-SIZE: " << p << std::endl;
+    }
+
+    // c-style-strings
+    char fn[6] = "James";
+    for (char a : fn) {
+        std::cout << "C-STYLE-STRING: " << a << std::endl;
+    }
+
+    // multidimensional arrays (2d + 3d)
+    int matrix[2][2][2] = {{{1, 2}, {3, 4}, }, {{5, 6}, {7, 8} } };
+    for (int s = 0; s < 2; s++) {
+        for (int d = 0; d < 2; d++) {
+            for (int f = 0; f < 2; f++) {
+                std::cout << "3D: " << matrix[s][d][f] << std::endl;
+            }
+        }
+    }
+
+    int mat[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+    for (int g = 0; g < 3; g++) {
+        for (int h = 0; h < 3; h++) {
+            std::cout << "2D: " << mat[g][h] << std::endl;
+        }
+    }
+
+    // dynamic arrays (vectors)
+    vs answers = {"yes", "no", "maybe"};
+
+    // printing arrays
+
+    //switch statements
+    int month;
+    std::cout << "ENTER YOUR MONTH (1-12): \n";
+    std::cin >> month;
+
+    switch (month) {
+        case 1: std::cout << "January" << std::endl; break;
+            case 2: std::cout << "February" << std::endl; break;
+            case 3: std::cout << "March" << std::endl; break;
+            case 4: std::cout << "April" << std::endl; break;
+            case 5: std::cout << "May" << std::endl; break;
+            case 6: std::cout << "June" << std::endl; break;
+            case 7: std::cout << "July" << std::endl; break;
+            case 8: std::cout << "August" << std::endl; break;
+            case 9: std::cout << "September" << std::endl; break;
+            case 10: std::cout << "October" << std::endl; break;
+            case 11: std::cout << "November" << std::endl; break;
+            case 12: std::cout << "December" << std::endl; break;
+            default: std::cout << "UNKNOWN MONTH" << std::endl; break;
+    }
+
+    //long vs int (64bit vs 32 bit)
+    long num = 2737273782171771278LL;
+    //singed vs unsigned
+    signed int s1 = 100; // any number
+    unsigned int s2 = -100; // any number less than 0
+
+    //ternary operator
+
+    //pointer arithmetic
+    int ar[3] = {20, 30, 10};
+    int* ptr = &ar[0];
+    std::cout << "POINTER-ARITHMETIC: " << ptr << std::endl;
+
+
+
+
+
+    return 0;
+}
