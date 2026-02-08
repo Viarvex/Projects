@@ -1,6 +1,7 @@
-//DAY 12
+//C++ REFERENCE SHEET
 #include <bits/stdc++.h> // ALL STANDARD C++ LIBRARIES IN A HEADER FILE
 using txt = std::string; using vi = std::vector<int>; using vs = std::vector<std::string>; // ALIASING
+#define ll long long
 
 //----FUNCTIONS----//
 // void | multiple parameters | default parameters
@@ -39,71 +40,24 @@ void applydamage(int& hlth, bool& isalv) {
 }
 
 //----OBJECT-ORIENTED-PROGRAMMING----//
-
-//Constructors & Destructors
-class Enemy { // name
-    public: // access specifier
-
-    Enemy() { // constructor (to create a constructor call the functions name)
-        std::cout << "Enemy Constructed" << std::endl;
-    }
-
-    ~Enemy() { // destructor (call the name but with a ~ before if you don't it will be a constructor)
-        std::cout << "Enemy Destroyed" << std::endl;
-    }
-};
-
-//Classes
-class Player { // class name
-    public: // access specifier (public = access anywhere)
-    int health; // attribute 1
-    void attack() { // method 1
-        std::cout << "Player Attacked" << std::endl;
-    }
-};
-
-//Encapsulation  (Bundling data + logic together and protecting internal state)
-class logi {
-private: // (access only inside class)
-    int health; // hidden attribute
-
-public: // (access anywhere)
-    void setHealth(int h) { // method (name is set health) (health variable is h)
-        if (h >= 0) health = h; // aliasing health to h
-    }
-
-    int getHealth() { // call
-        return health; // logic
-    }
-};
-
-//Inheritance (One class derives from another)
-class Entity {
+class character {
+private: // encapsulation (hides data)
+    int health; // hidden
 public:
-    int hp;
-};
+    void set_health(int health = 100); // setter (sets hidden value)
+    int get_health(); // getter (gets hidden value)
+    character() { // constructor
+     std::cout << "CONSTRUCTOR" << std::endl;
+    }
 
-class playr : public Entity {
-public:
-    void jump() {
-        std::cout << "Player Jumped" << std::endl;
+    ~character() { // desturctor
+        std::cout << "DESTRUCTOR" << std::endl;
     }
 };
-
-//Polymorphism
-class Enemyy {
+class player : public character { // inheritance (derived classes)
 public:
-    virtual void attack() {
-        std::cout << "Enemy attack\n";
-    }
 };
 
-class Boss : public Enemyy {
-public:
-    virtual stdvoid attack() override {
-        std::cout << "Boss special attack\n";
-    }
-};
 
 
 
@@ -112,25 +66,6 @@ int main() {
     //SPEED SYNCING
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
-
-    //---------------------OOP-------------------------------------//
-    //Constructors / destructors
-
-    //Classes
-    Player p1; // object
-    p1.health = 100;
-
-    //polymorphism (without virtual functions)
-    Enemyy* e = new Boss();
-        e->attack(); // boss special attack
-
-
-
-
-
-
-
-    //---------------------OOP-------------------------------------//
 
     //----LOOPS----//
     //for
@@ -146,11 +81,11 @@ int main() {
     }
 
     //do-while
-    int e = 0;
+    int ea = 0;
     do {
-        e++;
-        std::cout << "DO-WHILE: " << e << std::endl;
-    } while (e < 5);
+        ea++;
+        std::cout << "DO-WHILE: " << ea << std::endl;
+    } while (ea < 5);
 
     //break
     for (int r = 0; r < 3; r++) {
