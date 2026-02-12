@@ -1,0 +1,90 @@
+// Calculator v0.2 (Goal: Custom Math Engine)
+// this layer is responsible for: all operations, classes & algorithms
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cmath>
+using ll = long long;
+using vl = std::vector<long long>; using txt = std::string; using vs = std::vector<std::string>;
+
+namespace calc {
+    // CORE GLOBAL FUNCTIONS
+
+
+
+    // LOCAL ARCHITECTURE SECTION FOR BASIC
+    struct secBasic {
+        class data {
+            public: // Important access operations
+            static float add(const float num1, const float num2) { // static means it belongs to the class not object
+                return num1 + num2;
+
+                static float rmv(const float num1, const float num2); {
+                    return num1 - num2;
+            }
+
+                static float mul(const float num1, const float num2) {
+                    return num1 * num2;
+                }
+
+                static float div(const float num1, const float num2) {
+                    return num1 / num2;
+                }
+
+            };
+        };
+
+    };
+
+    // LOCAL FUNCTION SECTION FOR ADVANCED
+    struct secAdvanced {
+
+    };
+
+    // LOCAL FUNCTION SECTION FOR METHODS
+    struct secMethods {
+
+    };
+    // LOCAL FUNCTION SECTION FOR SPECIALIST
+    struct secSpecialist {
+
+    };
+}
+
+int main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    int choice;
+    int secB1;
+
+    std::cout << "Celestia Calculator \n";
+    std::cout << "==============================\n";
+    std::cout << "Choose your mode: \n";
+    std::cout << "(1) Secondary basic \n";
+    std::cout << "(2) Secondary Advanced \n";
+    std::cout << "(3) Methods \n";
+    std::cout << "(4) Specialist \n";
+    std::cout << "(5) Debugger \n";
+    std::cout << "Your Choice: " << std::endl;
+    std::cin >> choice;
+
+    switch (choice) {
+        case 1: std::cout << "Secondary Basic Mode \n"; break;
+            case 2: std::cout << "Secondary Advanced Mode \n"; break;
+            case 3: std::cout << "Methods Mode \n"; break;
+            case 4: std::cout << "Specialist \n"; break;
+            case 5: std::cout << "Mode: Debugger \n"; break;
+            default: std::cout << "Invalid mode\n"; break;
+    }
+
+    switch (secB1) {
+        case 1: // add (call class function)
+        case 2: // rmv
+            case 3: // multiply
+            case 4: // divide
+    }
+
+
+    return 0;
+}
+
