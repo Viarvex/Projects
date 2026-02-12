@@ -1,26 +1,24 @@
 #include <bits/stdc++.h>
-using vi = std::vector<int>; using vs = std::vector<std::string>; using txt = std::string; using vl = std::vector<long long>;
-
-
+#define ll = long long
 
 int main() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
 
     char op; // operator
-    float num1, num2;
+    std::vector<long long> nums;
+    long long plac;
+    nums.push_back(plac);
 
-    std::cout << "ENTER OPERATOR: (+, -, *, /): \n";
+    std::cout << "ENTER OPERATOR: (+, -, *, /): ";
     std::cin >> op;
 
     std::cout << "ENTER NUMBERS: \n";
-    std::cin >> num1 >> num2;
+    std::cin >> plac;
 
     switch(op) { // switch operation
-        case '+': std::cout << num1 + num2; break;
-        case '-': std::cout << num1 - num2; break;
-        case '*': std::cout << num1 * num2; break;
-        case '/': std::cout << num1 / num2; break;
+        case '+': std::cout << nums[0] + nums[1]; break;
+        case '-': std::cout << nums[0] - nums[1]; break;
+        case '*': std::cout << nums[0] * nums[1]; break;
+        case '/': std::cout << nums[0] / nums[1]; break;
         default: std::cout << "ERROR"; break;
     }
 
