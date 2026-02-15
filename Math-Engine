@@ -1,4 +1,4 @@
-// Calculator v0.2 (Goal: Custom Math Engine)
+// Calculator v0.2 (Goal: Custom Math Engine
 // this layer is responsible for: all operations, classes & algorithms
 #include <iostream>
 #include <string>
