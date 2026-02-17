@@ -1,2 +1,2 @@
 # Projects
-All current projects that i have ever created since highschool.
+All current projects/Mini projects that i have ever created since highschool.
