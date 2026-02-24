@@ -81,7 +81,7 @@ int main() {
         case 1: // add (call class function)
         case 2: // rmv
             case 3: // multiply
-            case 4: // divide
+            case 4: // divid
     }
 
 
