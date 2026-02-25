@@ -1,5 +1,5 @@
 // Calculator v0.2 (Goal: Custom Math Engine)
-// this layer is responsible for: all operations, classes & algorithms
+// this layer is responsible for: all operations, classes & alorithms
 #include <iostream>
 #include <string>
 #include <vector>
