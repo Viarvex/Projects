@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <cmath>
-using ll = long long;
+using ll = long long
 using vl = std::vector<long long>; using txt = std::string; using vs = std::vector<std::string>;
 
 namespace calc {
